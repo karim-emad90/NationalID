@@ -1,0 +1,23 @@
+<form #f= 'ngForm'>
+    <div class="form-group">
+<label>National ID: </label>
+<input type="text" #num1 name="number1" [(ngModel)]="number1" class="form-control"  maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" (keyup)="moveToNext($event, '',num1,num2)">
+<input type="text" #num2 name="number2" [(ngModel)]="number2" class="form-control" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" (keyup)="moveToNext($event, num1,num2,num3)">
+<input type="text" #num3 name="number3" [(ngModel)]="number3" class="form-control" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" (keyup)="moveToNext($event, num2,num3,num4)">
+<input type="text" #num4 name="number4" [(ngModel)]="number4" class="form-control" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" (keyup)="moveToNext($event, num3,num4,num5)">
+<input type="text" #num5 name="number5" [(ngModel)]="number5" class="form-control" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" (keyup)="moveToNext($event, num4,num5,num6)">
+<input type="text" #num6 name="number6" [(ngModel)]="number6" class="form-control" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" (keyup)="moveToNext($event, num5,num6,num7)">
+<input type="text" #num7 name="number7" [(ngModel)]="number7" class="form-control" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" (keyup)="moveToNext($event, num6,num7,num8)">
+<input type="text" #num8 name="number8" [(ngModel)]="number8" class="form-control" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" (keyup)="moveToNext($event, num7,num8,num9)">
+<input type="text" #num9 name="number9" [(ngModel)]="number9" class="form-control" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" (keyup)="moveToNext($event, num8,num9,num10)">
+<input type="text" #num10 name="number10" [(ngModel)]="number10" class="form-control" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" (keyup)="moveToNext($event, num9,num10,num11)">
+<input type="text" #num11 name="number11" [(ngModel)]="number11" class="form-control" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" (keyup)="moveToNext($event, num10,num11,num12)">
+<input type="text" #num12 name="number12" [(ngModel)]="number12" class="form-control" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" (keyup)="moveToNext($event, num11,num12,num13)">
+<input type="text" #num13 name="number13" [(ngModel)]="number13" class="form-control" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" (keyup)="moveToNext($event, num12,num13,num14)">
+<input type="text" #num14 name="number14" [(ngModel)]="number14" class="form-control" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" (keyup)="moveToNext($event, num13,num14, '')">
+<button type="submit" class="btn btn-primary" (click)="onClick()" name="result">Submit</button>
+</div>
+
+
+
+</form>
