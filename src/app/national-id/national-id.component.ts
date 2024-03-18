@@ -99,21 +99,13 @@ result: string ='';
     else{
       this.result = this.finalNumber;
     }
-    this.onChange(this.result,this.onKey(this.number14));
+    this.onChange(this.result);
     this.onTouched();
    
     
   }
 
-  onKey(number14:string){
-    this.number14 = number14;
-    if(number14 == ''){
-      this.result = '';
-    }
-    else{
-      this.result = this.finalNumber;
-    }
-  }
+  
  
   
 

@@ -14,7 +14,7 @@
 <input type="text"  #num11 name="number11" [(ngModel)]="number11" class="form-control" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" (keyup)="moveToNext($event, num10,num11,num12)" (change)="onKeyUp()">
 <input type="text"  #num12 name="number12" [(ngModel)]="number12" class="form-control" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" (keyup)="moveToNext($event, num11,num12,num13)" (change)="onKeyUp()">
 <input type="text"  #num13 name="number13" [(ngModel)]="number13" class="form-control" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" (keyup)="moveToNext($event, num12,num13,num14)" (change)="onKeyUp()">
-<input type="text"  #num14 name="number14" [(ngModel)]="number14" class="form-control" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" (keyup)="moveToNext($event, num13,num14, '')" (change)="onKeyUp()">
+<input type="text"  #num14 name="number14" [(ngModel)]="number14" class="form-control" maxlength="1" oninput="this.value=this.value.replace(/[^0-9]/g,'');" (keyup)="moveToNext($event, num13,num14, '')" (change)="onKeyUp()" >
 
 
 </div>
