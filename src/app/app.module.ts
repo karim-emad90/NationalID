@@ -10,7 +10,8 @@ import { NationalIdComponent } from './national-id/national-id.component';
 @NgModule({
   declarations: [
     AppComponent,
-    NationalIdComponent
+    NationalIdComponent,
+    
   ],
   imports: [
     BrowserModule,

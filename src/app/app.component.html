@@ -1,2 +1,12 @@
-<app-national-id name="result" [(ngModel)]="result" [(ngModel)]="status"></app-national-id>
-<div class="output"><label [style.color]="status? 'green' : 'red'">Result: {{result}}</label></div>
+<form #f= 'ngForm'>
+<app-national-id name="nid" #nid="ngModel" [(ngModel)]="result" ></app-national-id>
+<div class="output"><label>{{result}}</label></div>
+
+
+
+
+<div *ngIf= "nid.errors?.['invalidNID']">
+    <div class="alert alert-danger" *ngIf= "nid.touched && nid.invalid">ID Numer Should Consists Of 14 Numbers Only ...</div>
+  </div>
+
+</form>
