@@ -1,5 +1,4 @@
-import { invalid } from '@angular/compiler/src/render3/view/util';
-import { Component, forwardRef, Input } from '@angular/core';
+import { Component, forwardRef} from '@angular/core';
 import { AbstractControl, ControlValueAccessor, NG_VALIDATORS, NG_VALUE_ACCESSOR, ValidationErrors, Validator } from '@angular/forms';
 
 @Component({
@@ -20,7 +19,8 @@ import { AbstractControl, ControlValueAccessor, NG_VALIDATORS, NG_VALUE_ACCESSOR
   ]
 })
 
-export class NationalIdComponent implements ControlValueAccessor,Validator {
+export class NationalIdComponent implements ControlValueAccessor,Validator{
+  
 number1: any='';
 number2: any='';
 number3: any='';
@@ -36,18 +36,17 @@ number12: any='';
 number13: any='';
 number14: any='';
 finalNumber:string='';
-code:Array<number>=[];
 length:any;
-errorMessage: string ='';
 result: string ='';
+customID:string = '29009031200152';
 
 
   constructor() { 
   
   }
-  validate(control: AbstractControl): ValidationErrors | null {
+  validate(control: AbstractControl): ValidationErrors| null {
    if(!this.finalNumber )return null;
-   else if(this.finalNumber.length<14){
+   else if(this.finalNumber.length <=13){
     
   
         
@@ -58,7 +57,7 @@ result: string ='';
           
           
           return{
-           invalidNID:true
+           invalidNID:true ,
           };
          
           
@@ -67,13 +66,21 @@ result: string ='';
         
        
       }
+      else if(this.finalNumber.length>13){
+        return {
+          invalidNID: false,
+        }
+      }
       
       else {
+        
         return null;
       }
       
+      
         
   }
+  
   
   
   onChange: any = () => { };
@@ -94,10 +101,10 @@ result: string ='';
 
     this.finalNumber=this.number1+this.number2+this.number3+this.number4+this.number5+this.number6+this.number7+this.number8+this.number9+this.number10+this.number11+this.number12+this.number13+this.number14;
     if(this.finalNumber.length <14){
-      this.result = '';
+      this.result= '';
     }
-    else{
-      this.result = this.finalNumber;
+    else if(this.finalNumber == this.customID){
+      this.result = this.customID;
     }
     this.onChange(this.result);
     this.onTouched();
@@ -116,7 +123,8 @@ result: string ='';
    if(length == maxLength){
      if(n != ''){
        n.focus();
-     }
+     } 
+     
    }
    if(e.key === "Backspace"){
      if(p != ''){

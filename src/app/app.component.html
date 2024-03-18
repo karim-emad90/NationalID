@@ -1,5 +1,5 @@
 <form #f= 'ngForm'>
-<app-national-id name="nid" #nid="ngModel" [(ngModel)]="result" ></app-national-id>
+<app-national-id name="nid" #nid="ngModel" minlength="13" [(ngModel)]="result" ></app-national-id>
 <div class="output"><label>{{result}}</label></div>
 
 
@@ -7,6 +7,9 @@
 
 <div *ngIf= "nid.errors?.['invalidNID']">
     <div class="alert alert-danger" *ngIf= "nid.touched && nid.invalid">ID Numer Should Consists Of 14 Numbers Only ...</div>
+  </div>
+  <div *ngIf= "nid.errors?.['maxlength']">
+    <div *ngIf= "nid.touched && nid.invalid">hello</div>
   </div>
 
 </form>
